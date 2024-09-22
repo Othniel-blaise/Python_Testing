@@ -48,6 +48,8 @@ def purchasePlaces():
     club = [c for c in clubs if c['name'] == request.form['club']][0]
     placesRequired = int(request.form['places'])
 
+    # Validation du nombre de places demandé
+    
     # Validation si le nombre de places demandées dépasse celles disponibles
     if placesRequired > int(competition['numberOfPlaces']):
         flash(f'Erreur : Il ne reste que {competition["numberOfPlaces"]} places disponibles.')
